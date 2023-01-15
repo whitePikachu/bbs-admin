@@ -136,7 +136,7 @@ const handleDelete = (row: User) => {
     ).data
     ElMessage.success(data.msg)
     tableData.value = tableData.value.filter(
-      (item) => item.authId === row.authId
+      (item) => item.authId !== row.authId
     )
   })
 }
@@ -162,12 +162,8 @@ const handleDeletes = (row: User[]) => {
           },
         })
       ).data
-      tableData.value = tableData.value.filter(
-        (item) => item.authId === item.authId
-      )
+      ElMessage.success(data.msg)
     })
-    // 刷新
-    window.location.reload()
   })
 }
 </script>

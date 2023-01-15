@@ -4,8 +4,8 @@ import { reactive, ref } from 'vue'
 import { token } from '../plugins/pinia'
 import service from '../plugins/axios'
 const loginForm = reactive({
-  name: 'admin',
-  paw: '123',
+  name: '',
+  paw: '',
 })
 const fromref = ref<FormInstance>()
 const login = async (formEl: FormInstance | undefined) => {
@@ -21,7 +21,7 @@ const login = async (formEl: FormInstance | undefined) => {
       const p = (
         await service({
           url: '/auth/Permissions',
-          method: 'post',
+          method: 'get',
           headers: {
             Authorization: `Bearer ${res.token}`,
           },

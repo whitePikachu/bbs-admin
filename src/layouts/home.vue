@@ -20,7 +20,7 @@ onMounted(() => {
     </el-aside>
     <el-container>
       <el-header>
-        <el-card>
+        <el-card class="Header">
           <Header />
         </el-card>
       </el-header>
@@ -43,5 +43,8 @@ onMounted(() => {
 <style scoped >
 .home {
   min-height: 700px;
+}
+.Header {
+  position: relative;
 }
 </style>
