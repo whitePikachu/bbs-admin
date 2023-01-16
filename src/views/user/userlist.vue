@@ -163,6 +163,9 @@ const handleDeletes = (row: User[]) => {
         })
       ).data
       ElMessage.success(data.msg)
+      tableData.value = tableData.value.filter(
+        (item) => item.authId !== item.authId
+      )
     })
   })
 }
