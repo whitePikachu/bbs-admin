@@ -5,7 +5,7 @@ import service from '../plugins/axios'
 import { ref } from 'vue'
 import { token } from '../plugins/pinia'
 const handleCurrentChange = async (val: number) => {
-  if (search.value) {
+  if (namesearch.value) {
     const data = (
       await service({
         url: `admin/searchUser?page=1&limit=5&username=${val}`,

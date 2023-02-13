@@ -2,6 +2,7 @@ import axios from "axios";
 import { ElMessage } from "element-plus";
 import router from "./router";
 import { API_URL } from "../config";
+import {token} from './pinia'
 //axios封装
 const service = axios.create({
   baseURL: API_URL,
@@ -24,8 +25,9 @@ service.interceptors.response.use(
         break;
       case 401:
         ElMessage.error("token失效，请重新登录");
-        window.localStorage.removeItem("token");
-        router.push("/login");
+        // token().token = ''
+        window.location.href = "/login";
+        // router.push("/login");
         break;
       case 403:
         ElMessage.error("没有权限，请联系管理员");

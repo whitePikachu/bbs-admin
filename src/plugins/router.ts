@@ -35,6 +35,11 @@ const router = createRouter({
         {
           path: "/post",
           component: () => import("@/layouts/post.vue"),
+          children: [],
+        },
+        {
+          path: "/newpost",
+          component: () => import("@/components/post/newpost.vue"),
         },
       ],
     },
