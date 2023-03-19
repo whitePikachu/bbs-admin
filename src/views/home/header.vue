@@ -9,7 +9,7 @@ function logout() {
 
 <template>
   <!-- 退出登陆 -->
-  <span>状况</span>
+  <span>欢迎来使用本后台管理系统</span>
   <el-button type="danger"
              link
              @click="logout"
